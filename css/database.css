@@ -1,0 +1,170 @@
+@import 'database_datas.css';
+
+body .label{
+  margin-bottom:0;
+  font-size:1.0rem;
+  font-weight:normal;
+  position:sticky;
+  top:0;
+  left:0;
+  background-color:white;
+  z-index:10;
+  box-shadow:2px 2px 5px rgba(0,0,0,0.3);
+  color:white;
+  background-color:#46C2CB;
+  display:flex;
+  width:100%;
+}
+body .label input{
+  margin-left:auto;
+  border:1px solid #ddd;
+  border-radius:4px;
+  outline:0;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.database-table{
+  max-height:200px;
+  min-height:50px;
+  margin:10px;
+  position:relative;
+}
+.tabs-area{
+  min-height:50px;
+  margin:10px;
+  position:relative;
+}
+.database-table .wrap{
+  overflow:auto;
+}
+.database-table .wrap,
+.tabs-area{
+  border:2px dashed #ddd;
+}
+
+.flex{
+  display:flex;
+  gap:10px;
+  justify-content: flex-start;
+  margin:10px;
+}
+.flex > *{
+  margin:0;
+  width:50%;
+}
+
+.tabs-area .tabs{
+  display:flex;
+  gap:5px;
+}
+.tabs-area .tabs > *{
+  width:50%;
+}
+.tabs-area .tabs label{
+  padding:5px 10px;
+  cursor:pointer;
+  border-radius:8px 8px 0 0;
+  display:block;
+}
+.tabs-area .tabs label:hover{
+  opacity:0.8;
+}
+
+
+.tabs-area .data-lists{
+
+}
+.tabs-area input[type='radio'] ~ .wrap{
+  display:none;
+}
+.tabs-area input[type='radio']#tab1:checked ~ .datas-area{
+  display:block;
+}
+.tabs-area input[type='radio']#tab2:checked ~ .table-info-area{
+  display:block;
+}
+
+.lists{
+  padding:0;
+  counter-reset: num;
+  width:100%;
+}
+
+
+ul.lists{
+  display:block;
+}
+
+ul.lists > li{
+  padding:5px 10px;
+  cursor:pointer;
+}
+ul.lists > li::before{
+  counter-increment: num;
+  content: counter(num) ".";
+  display:inline-block;
+  width:50px;
+  text-align:right;
+  padding-right:10px;
+}
+ul.lists > li:nth-of-type(2n+1){
+  background-color:#efefef;
+}
+ul.lists > li:hover{
+  opacity:0.7;
+}
+
+ul.lists > li[data-color='0']{
+  display:none;
+}
+ul.lists > li[data-color='1']{
+  background-color:white;
+}
+ul.lists > li[data-color='2']{
+  background-color:#efefef;
+}
+
+ul.lists > li[data-active='true']{
+  background-color:#2e2e8c;
+  color:white;
+}
+ul.lists > li[data-error]{
+  background-color:red;
+  color:white;
+}
+
+table.lists{
+  border-collapse:collapse;
+  width:100%;
+}
+table.lists:empty{
+  min-height:50px;
+}
+table.lists *{
+  font-size:0.8rem;
+}
+table.lists th{
+  background-color:#efefef;
+}
+table.lists tr > *{
+  border:1px solid #ddd;
+  padding:5px;
+}
+table.lists .num{
+  width:50px;
+}
+table.lists > tbody > tr > .num::before{
+  counter-increment: num;
+  content: counter(num) ".";
+  display:block;
+  text-align:center;
+}
+
+.records{
+  font-size:0.8rem;
+}
+.records::after{
+  content:' records';
+  font-size:0.7rem;
+}

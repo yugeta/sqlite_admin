@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<head>
+  <meta charset='utf-8'>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel='icon' href='./favicon.svg' type='image/svg+xml'/>
+  <link rel='stylesheet' href='css/style.css'/>
+  <script type='module' src='js/main.js'></script>
+</head>
+<body>
+  <div class='flex database-table'>
+    <div class='wrap'>
+      <h1 class='label'>
+        <span>SQLite files (datas/sqlite/*.sql)</span>
+        <input type='text' name='search_database' placeholder='絞り込み文字列'>
+      </h1>
+      <ul class='lists' id='databases'></ul>
+    </div>
+    
+    <div class='wrap'>
+      <h1 class='label'>
+        <span>Tables</span>
+        <input type='text' name='search_table' placeholder='絞り込み文字列'>
+      </h1>
+      <ul class='lists' id='tables'></ul>
+    </div>
+  </div>
+  
+  <div class='tabs-area'>
+    <input type='radio' name='tab' id='tab1' style='display:none;' checked>
+    <input type='radio' name='tab' id='tab2' style='display:none;'>
+    <div class='tabs'>
+      <label class='label' for='tab1'>Datas / <span class='records'>0</span></label>
+      <label class='label' for='tab2'>Columns</label>
+    </div>
+    <div class='wrap table-info-area'>
+      <table class='lists' id='columns'></table>
+    </div>
+    
+    <div class='wrap datas-area'>
+      <div class='select-text-area'>
+        <textarea name='sql_text' placeholder='SELECT * TABLE @ LIMIT=10'></textarea>
+        <button class='run'>実行</button>
+      </div>
+      <div class='various-property'>
+        <b>Count</b> : <span class='count'>0</span> / 
+        <b>Time</b> :  <span class='time'></span> sec
+      </div>
+      <div class='table-area'>
+        <table class='lists' id='datas'></table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
